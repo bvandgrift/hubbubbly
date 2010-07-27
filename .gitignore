@@ -2,3 +2,5 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+vendor/bundler_gems/**
+Gemfile.lock
