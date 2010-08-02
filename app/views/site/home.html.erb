@@ -1,0 +1,57 @@
+<div id="splash">
+  <%= avatars_for(@users) %>
+</div>
+<div id="events">
+  <h2>Upcoming Events</h2>
+  <div class="event" id="event-1233">
+    <div class="datetime">Friday May 15 @ 6.5p</div>
+    <div class="title">Startup Weekend!</div>
+    <div class="location">Enventys, Inc.</div>
+  </div>  
+
+  <div class="event" id="event-1234">
+    <div class="datetime">Thursday May 20 @ 6.5p</div>
+    <div class="title">Introduction to WebSockets</div>
+    <div class="location">AREA 15 in Charlotte, NC</div>
+  </div>  
+  <div class="event" id="event-1235">
+    <div class="datetime">Tuesday June 22 @ 7p</div>
+    <div class="title">Ruby 1 oh 1</div>
+    <div class="location">AREA 15 in Charlotte, NC</div>
+  </div>  
+  <div class="event" id="event-1236">
+    <div class="datetime">Monday, June 4 @ 8a</div>
+    <div class="title">RAILSCONF</div>
+    <div class="location">Baltimore, MD</div>
+  </div>  
+  <br/><%= link_to "See All >>", '#', :class => 'right-on'-%>
+  
+</div>
+<div id="items">
+  <h2>Latest Posts</h2>
+  <%= render :partial => 'shared/feed_item', :collection => @feed_items %>
+  <br/><%= link_to "More >>", feed_items_path, :class => 'right-on'-%>
+</div>
+<div id="chatter">
+  <h2>Chatter</h2>
+  <div class="chat">
+    <span class="from">@bigfleet:</span> 
+    Juggalos invading the codebase! Thanks a lot, last.fm recommended events!
+    <br/>5 minutes ago via Tweetie
+  </div>
+  <div class="chat">
+    <span class="from">@Ryan_Burkhart:</span> 
+    @SummerPlum Doh! However, sometimes it's not what you do (cause, it's all been done before) - It's the attitude you do it with!    <br/>5 minutes ago via Tweetie
+    <br/>6 minutes ago via web in reply to SummerPlum
+  </div>
+  <div class="chat">
+    <span class="from">@SummerPlum:</span> 
+    @Ryan_Burkhart this is why you do market research...    
+    <br/>7 minutes ago via Tweetie
+  </div>
+  <div class="chat">
+    <span class="from">@jasonfried:</span> 
+    The biggest school in the world is run (and taught) by one guy: <%= link_to 'http://vimeo.com/11731351', 'http://vimeo.com/11731351' -%>    
+    <br/>8 minutes ago via web  
+  </div>  
+</div>

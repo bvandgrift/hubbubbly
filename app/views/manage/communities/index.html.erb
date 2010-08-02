@@ -1,0 +1,11 @@
+<h1>Communities!</h1>
+<h2>Be sure and allow only site admins here.</h2>
+<table>
+  <thead>
+    <%= render :partial => 'communities_header' -%>
+  </thead>
+  <tbody>
+    <%= render @communities -%>
+  </tbody>
+</table>
+<p><%= link_to 'New Community', new_manage_community_path -%></p>

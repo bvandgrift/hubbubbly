@@ -1,0 +1,4 @@
+<% form_for @community, :url => manage_community_path(@community) do |f| %>
+  <%= f.label :name %><%= f.text_field :name %>
+  <button type="submit">Go!</button>
+<% end %>

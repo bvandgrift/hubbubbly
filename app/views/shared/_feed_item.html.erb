@@ -1,0 +1,4 @@
+<div class="item">
+  <h3><%= link_to feed_item.title, feed_item.link -%></h3>
+  <%= content_tag :p, feed_item.description unless feed_item.description.strip.blank? -%>
+</div>

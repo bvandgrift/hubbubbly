@@ -1,0 +1,12 @@
+<h1>Editing feed_item</h1>
+
+<% form_for(@feed_item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @feed_item %> |
+<%= link_to 'Back', feed_items_path %>

@@ -1,0 +1,13 @@
+<div id="feeds">
+<%= avatar_for(@user, :small)%>
+<h1>Feed from: <%= @feed.name -%></h1>
+<% if @user == current_user %>
+<%= link_to "Edit", edit_user_feed_path(current_user) %>
+<%= link_to "Delete", user_feed_path(current_user), :method => :delete %>
+<% end %>
+
+<%= render :partial => 'shared/feed_item', :collection => @feed.feed_items %>
+
+<%#= render :partial => 'entry', :collection => @feed.entries %>
+
+</div>

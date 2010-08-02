@@ -1,0 +1,7 @@
+<tr>
+  <td><%= link_to community.name, manage_community_path(community) -%></td>
+  <td>
+    <%= link_to "Edit", edit_manage_community_path(community)%>
+    <%= link_to "Delete", manage_community_path(community), :method => :delete -%>
+  </td>
+</tr>

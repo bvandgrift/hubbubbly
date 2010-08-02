@@ -1,0 +1,5 @@
+<% form_for @feed, :url => manage_feeds_path do |f| %>
+  <%= f.label :name -%><%= f.text_field :name -%><br/>
+  <%= f.label :url -%><%= f.text_field :url -%><br/>
+  <button type="submit">Go!</button><br/>
+<% end %>

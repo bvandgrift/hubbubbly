@@ -1,0 +1,25 @@
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<% if current_user.can_follow?(@user) %>
+  <% form_for Follow.new(:follower => current_user, :followable => @user) do |f| %>
+    <%= f.error_messages %>
+      <%= f.hidden_field :follower_id %>
+      <%= f.hidden_field :followable_type %>
+      <%= f.hidden_field :followable_id %>
+    <span>
+      <%= f.submit 'Follow' %>
+    </span>
+  <% end %>
+<% elsif current_user.follows?(@user) %>
+  <% form_for current_user.follow_for(@user), :html => {:method => :delete} do |f| %>
+      <%= f.hidden_field :follower_id %>
+      <%= f.hidden_field :followable_type %>
+      <%= f.hidden_field :followable_id %>
+    <span>
+      <%= f.submit 'Unfollow' %>
+    </span>
+  <% end %>
+<% end %>

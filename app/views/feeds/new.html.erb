@@ -1,0 +1,6 @@
+<h1>Add A New Feed</h1>
+<% form_for @feed, :url => user_feeds_path(current_user, :method => :post) do |f| %>
+  <%= f.label :name %><%= f.text_field :name %>
+  <%= f.label :url %><%= f.text_field :url %>  
+  <%= f.submit "Add" %>
+<% end %>
