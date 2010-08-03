@@ -1,17 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.rc'
-gem 'mysql'
 gem 'capistrano'
 gem "authlogic"
-gem "bundler", ">= 0.9.25"
-gem "resource_controller", "0.6.6"
-gem "paperclip", "2.3.1.1"
-gem "aws-s3", "0.6.2"
-gem "feedzirra"
-gem "ri_cal", "0.8.7"
+gem "inherited_resources", "1.1.2"
+#gem "paperclip", "2.3.1.1"
+#gem "feedzirra"
 
-# gem 'ruby-debug'
+gem "aws-s3", "0.6.2"
+gem "ri_cal", "0.8.7"
+gem "pg"
 
 group :test do
   gem "rspec",      ">= 2.0.0.beta"

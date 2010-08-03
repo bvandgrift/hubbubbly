@@ -21,4 +21,4 @@ class UserSessionsController < ApplicationController
     flash[:notice] = "Logout successful!"
     redirect_back_or_default root_url
   end
-end
+end  
