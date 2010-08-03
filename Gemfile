@@ -11,6 +11,7 @@ gem "feedzirra", :git => "git://github.com/pauldix/feedzirra.git"
 gem 'loofah-activerecord', "1.0.0.beta.1"
 gem 'loofah', "1.0.0.beta.1"
 gem "ri_cal", "0.8.7"
+gem "inherited_resources", "1.1.2"
 
 group :test do
   gem "rspec",      ">= 2.0.0.beta"
