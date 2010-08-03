@@ -8,7 +8,9 @@ gem "bundler", ">= 0.9.25"
 #gem "resource_controller", "0.6.6"
 gem 'paperclip', "2.3.3"
 gem "aws-s3", "0.6.2"
-gem "feedzirra"
+gem "feedzirra", :git => "git://github.com/pauldix/feedzirra.git"
+gem 'loofah-activerecord', "1.0.0.beta.1"
+gem 'loofah', "1.0.0.beta.1"
 gem "ri_cal", "0.8.7"
 
 # gem 'ruby-debug'
