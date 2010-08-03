@@ -1,13 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.rc'
+gem 'pg'
 gem 'capistrano'
 gem "authlogic"
-gem "inherited_resources", "1.1.2"
-#gem "paperclip", "2.3.1.1"
-#gem "feedzirra"
-
+gem "bundler", ">= 0.9.25"
+gem 'paperclip', "2.3.3"
 gem "aws-s3", "0.6.2"
+gem "feedzirra", :git => "git://github.com/pauldix/feedzirra.git"
+gem 'loofah-activerecord', "1.0.0.beta.1"
+gem 'loofah', "1.0.0.beta.1"
 gem "ri_cal", "0.8.7"
 gem "pg"
 
