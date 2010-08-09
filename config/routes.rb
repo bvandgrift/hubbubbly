@@ -1,4 +1,17 @@
 Hubbubbly::Application.routes.draw do
+
+  resource :account, :controller => "users"
+
+  resources :users do
+    resource :profile
+    resources :feeds
+  end
+  
+  resource :user_session
+
+  root :to => "site#home"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,6 +25,7 @@ Hubbubbly::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
 
   # Sample resource route with options:
   #   resources :products do
