@@ -1,10 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails', '3.0.0'
+gem 'rake', '0.8.7'
 gem 'pg'
 gem 'capistrano'
 gem "authlogic"
-gem "bundler", ">= 0.9.25"
+gem "bundler", "1.0"
 gem 'paperclip', "2.3.3"
 gem "aws-s3", "0.6.2"
 gem "feedzirra", :git => "git://github.com/pauldix/feedzirra.git"
