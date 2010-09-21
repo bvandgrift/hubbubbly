@@ -2,6 +2,8 @@ Hubbubbly::Application.routes.draw do
 
   resource :account, :controller => "users"
 
+  resources :events
+
   resources :users do
     resource :profile
     resources :feeds
@@ -9,7 +11,7 @@ Hubbubbly::Application.routes.draw do
   
   resource :user_session
 
-  root :to => "site#home"
+  root :to => "sites#home"
 
 
   # The priority is based upon order of creation:

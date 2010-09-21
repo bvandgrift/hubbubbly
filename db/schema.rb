@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100803015040) do
+ActiveRecord::Schema.define(:version => 20100919180803) do
+
+  create_table "events", :force => true do |t|
+    t.string   "label",      :null => false
+    t.datetime "at",         :null => false
+    t.string   "location"
+    t.integer  "source_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id",    :null => false
