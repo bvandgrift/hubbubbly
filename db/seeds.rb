@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+Calendar.create([
+  {
+    :name => "CLT.ux", 
+    :url =>"http://www.charlotteux.org/calendar/ical/Charlotte+User+Experience+Meetup+Group/"
+  },
+  {
+    :name => "CLT.ux", 
+    :url =>"http://www.charlotteux.org/calendar/ical/Charlotte+User+Experience+Meetup+Group/"
+  }
+])

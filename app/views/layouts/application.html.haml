@@ -1,0 +1,29 @@
+!!!html
+
+%html
+  %head
+    - page_title = yield(:page_title)
+    %title #{page_title.present? ? page_title : "Keep Yourself in the Loop"} | Hubbubbly
+
+    = csrf_meta_tag
+    = javascript_include_tag :defaults
+    = stylesheet_link_tag 'application'
+    = yield :head
+  
+  %body
+    .wrapper
+      .header
+        = content_tag :p, flash[:notice], :class=>"notice" if flash[:notice] 
+        = content_tag :p, flash[:error], :class=>"error" if flash[:error]
+
+        = yield 
+  
+      .footer
+        .contact
+          = link_to 'hubbubbly.com', 'hubbubbly.com'
+          a charlotte, nc company<br/>
+        .links
+          = link_to 'about us', 'about'
+          = link_to 'halp!', 'halp'
+        .copyright
+          &copy; 2010, hububbly, llc

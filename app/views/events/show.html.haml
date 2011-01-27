@@ -1,6 +1,8 @@
-%h1.event.title=@event.label
+%h1.event.title= link_to @event.label, @event.url
 
 %h2.date
   = @event.at
-%p.location
+.location
   = @event.location
+.description
+  = @event.description

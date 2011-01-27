@@ -4,14 +4,11 @@ Hubbubbly::Application.routes.draw do
 
   resources :events
 
-  resources :users do
-    resource :profile
-    resources :feeds
-  end
+  resources :users 
   
   resource :user_session
 
-  root :to => "sites#home"
+  root :to => "events#index"
 
 
   # The priority is based upon order of creation:

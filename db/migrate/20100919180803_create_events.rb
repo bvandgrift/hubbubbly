@@ -3,8 +3,15 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :label, :null => false
       t.datetime :at, :null => false
+      t.datetime :until
       t.string :location
       t.integer :source_id
+      t.integer :calendar_id, :null => false
+      t.string :uid
+      t.string :summary
+      t.string :url
+      t.datetime :last_modified
+      t.text :description
         
       t.timestamps
     end
@@ -14,3 +21,4 @@ class CreateEvents < ActiveRecord::Migration
     drop_table :events
   end
 end
+

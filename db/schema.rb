@@ -10,20 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100919180803) do
+ActiveRecord::Schema.define(:version => 20110127062106) do
 
-  create_table "events", :force => true do |t|
-    t.string   "label",      :null => false
-    t.datetime "at",         :null => false
-    t.string   "location"
-    t.integer  "source_id"
+  create_table "calendars", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "url",        :null => false
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "profiles", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.text     "bio"
+  create_table "events", :force => true do |t|
+    t.string   "label",         :null => false
+    t.datetime "at",            :null => false
+    t.datetime "until"
+    t.string   "location"
+    t.integer  "source_id"
+    t.integer  "calendar_id",   :null => false
+    t.string   "uid"
+    t.string   "summary"
+    t.string   "url"
+    t.datetime "last_modified"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

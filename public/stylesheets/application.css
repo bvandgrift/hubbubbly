@@ -1,0 +1,124 @@
+/* IMPORT _PARTIALS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: "" ""; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: ""; }
+
+a img {
+  border: none; }
+
+/* Baseline */
+body {
+  color: black;
+  font-size: 62.8%; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.6em;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+  line-height: 1.4em; }
+  h1 .centered, h2 .centered, h3 .centered, h4 .centered, h5 .centered, h6 .centered {
+    text-align: center; }
+
+h1 {
+  font-size: 2.4em;
+  font-weight: bold; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.6em; }
+
+h4 {
+  font-size: 1.2em; }
+
+h5 {
+  font-size: 1.05em;
+  font-weight: bold; }
+
+h6 {
+  font-size: 0.9em; }
+
+p {
+  margin-bottom: 1em; }
+
+em {
+  font-style: italic; }
+
+ul.list, ol.list {
+  list-style: none;
+  margin-left: 2em;
+  margin-bottom: 1em; }
+  ul.list li, ol.list li {
+    margin-bottom: 0.4em; }
+
+ol.list {
+  list-style: decimal; }
+
+html {
+  background-color: #444444; }
+
+body {
+  background-color: white;
+  width: 960px;
+  margin: auto; }
+  body .wrapper {
+    padding: 2em; }
+    body .wrapper .footer {
+      height: 5em; }
+      body .wrapper .footer .contact {
+        float: left; }
+      body .wrapper .footer .links {
+        float: left;
+        clear: left; }
+      body .wrapper .footer .copyright {
+        float: right; }
+
+.event {
+  padding-bottom: 2em; }
+  .event .title {
+    font-size: 1.6em;
+    padding: 0.5em 0 0 0; }
+  .event .date {
+    font-size: 1.4em;
+    padding: 0.5em 0 0 0; }
+  .event .location {
+    font-size: 1.2em;
+    padding: 0.5em 0 0 0; }
