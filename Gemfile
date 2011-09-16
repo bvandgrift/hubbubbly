@@ -22,6 +22,8 @@ group :test, :development, :cucumber do
   gem 'rspec-rails', '~> 2.6'
   gem 'factory_girl_rails', '~> 1.1'
   gem 'guard', '~> 0.5', :require => nil
+  gem 'rb-fsevent'
+  gem 'growl'
   gem 'guard-bundler', '~> 0.1.3', :require => nil
   gem 'guard-rspec', '~> 0.4', :require => nil
   gem 'capybara'

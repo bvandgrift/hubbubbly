@@ -1,8 +1,10 @@
-%h1.event.title= link_to @event.label, @event.url
+.event
 
-%h2.date
-  = @event.at
-.location
-  = @event.location
-.description
-  = @event.description
+  %h1.title= link_to @event.label, @event.url
+
+  %h2.date
+    = @event.at.strftime("%B %d, %l:%M %P")
+  .location
+    = @event.location
+  .description
+    = @event.description

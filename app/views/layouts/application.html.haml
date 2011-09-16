@@ -16,6 +16,7 @@
         = content_tag :p, flash[:notice], :class=>"notice" if flash[:notice] 
         = content_tag :p, flash[:error], :class=>"error" if flash[:error]
 
+      .content      
         = yield 
   
       .footer
