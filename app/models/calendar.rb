@@ -1,10 +1,12 @@
 require 'open-uri'
 class Calendar < ActiveRecord::Base
 
-  validate [:name,:url], :presence => true
+  validates :name, :presence => true
+  validates  :url, :presence => true
+
   has_many :events
   
-  def update
+  def import
     calendar_file = open(url)
     calendars = Icalendar.parse(calendar_file)
     updated = created = 0
