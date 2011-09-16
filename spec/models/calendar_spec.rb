@@ -12,12 +12,9 @@ describe Calendar do
   it "creates events when importing, without repeats" do
     expect {
       calendar.import
-      puts "There are (#{calendar.events.count}) events in the calendar"
-      puts calendar.events.inspect
-    }.to change { calendar.events.count }.by(3)
+    }.to change{ calendar.events.count }.by(3)
 
-    calendar.events.count.should == 3
-    calendar.events.last.label.should match(/update/)
+    calendar.events.map{ |e| e.label}.should include("update")
     
   end
 end
