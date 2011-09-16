@@ -14,16 +14,7 @@ class Calendar < ActiveRecord::Base
       
       logger.info "importing: #{calendar.properties['x-wr_caldesc']}"
       calendar.events.map(&:properties).each do |prop|
-        event = {
-          :label => prop['summary'],
-          :at => prop['dtstart'],
-          :until => prop['dtend'],
-          :description => prop['description'],
-          :location => prop['location'],
-          :last_modified => prop['last_modified'],
-          :url => prop['url'].to_s,
-          :uid => prop['uid']
-        }
+        event = extract_event_properties(prop)
         existing_event = events.find_by_uid(prop['uid'])
         if existing_event
           existing_event.update_attributes(event)
@@ -38,8 +29,18 @@ class Calendar < ActiveRecord::Base
   end
 
 private 
-  def extract_event_properties(event_properties)
-    event_properties.select { |k,v| Event.new.attributes.keys.include?(k) }
+  def extract_event_properties(props)
+    {
+      :label => props['summary'],
+      :at => props['dtstart'],
+      :until => props['dtend'],
+      :description => props['description'],
+      :location => props['location'],
+      :last_modified => props['last_modified'],
+      :url => props['url'].to_s,
+      :uid => props['uid'],
+      :summary => props['summary']
+    }
   end    
 
 end

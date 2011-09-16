@@ -31,4 +31,5 @@ group :test, :development, :cucumber do
   gem 'capybara'
   gem 'faker'
   gem 'database_cleaner', '0.5.2'
+  gem 'simplecov', '~> 0.4', :require => false
 end

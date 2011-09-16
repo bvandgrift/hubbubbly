@@ -11,7 +11,7 @@ Hubbubbly::Application.routes.draw do
   resources :calendars
 
   namespace :manage do
-    resources :calendar
+    resources :calendars
   end
 
   root :to => "events#index"
