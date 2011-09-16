@@ -2,8 +2,44 @@ require 'spec_helper'
 
 describe Manage::CalendarsController do
 
+  before(:each) do
+    @user = Factory.create(:user)  #:user from factory girl with admin privilages
+    sign_in @user
+  end
+
   def valid_attributes
     {:name => "Test Calendar", :url => "http://test-host.test"}
+  end
+
+  describe "GET index" do
+    it "assigns all calendars as @calendars" do
+      calendar = Calendar.create! valid_attributes
+      get :index
+      assigns(:calendars).should eq([calendar])
+    end
+  end
+
+  describe "GET show" do
+    it "assigns the requested calendar as @calendar" do
+      calendar = Calendar.create! valid_attributes
+      get :show, :id => calendar.id.to_s
+      assigns(:calendar).should eq(calendar)
+    end
+  end
+
+  describe "GET new" do
+    it "assigns a new calendar as @calendar" do
+      get :new
+      assigns(:calendar).should be_a_new(Calendar)
+    end
+  end
+
+  describe "GET edit" do
+    it "assigns the requested calendar as @calendar" do
+      calendar = Calendar.create! valid_attributes
+      get :edit, :id => calendar.id.to_s
+      assigns(:calendar).should eq(calendar)
+    end
   end
 
   describe "POST create" do
@@ -38,7 +74,7 @@ describe Manage::CalendarsController do
         # Trigger the behavior that occurs when invalid params are submitted
         Calendar.any_instance.stub(:save).and_return(false)
         post :create, :calendar => {}
-        response.should redirect_to(calendars_url)
+        response.should redirect_to(manage_calendars_url)
       end
     end
   end
@@ -82,7 +118,7 @@ describe Manage::CalendarsController do
         # Trigger the behavior that occurs when invalid params are submitted
         Calendar.any_instance.stub(:save).and_return(false)
         put :update, :id => calendar.id.to_s, :calendar => {}
-        response.should redirect_to(calendar_url(calendar))
+        response.should redirect_to(manage_calendar_url(calendar))
       end
     end
   end

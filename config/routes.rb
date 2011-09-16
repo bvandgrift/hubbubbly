@@ -1,17 +1,15 @@
 Hubbubbly::Application.routes.draw do
 
-  resource :account, :controller => "users"
+  devise_for :users
 
-  resources :events
-
-  resources :users 
-
-  resource :user_session
-
-  resources :calendars
+  resources :events, :only => [:show,:index]
 
   namespace :manage do
-    resources :calendars
+    resources :calendars do
+      member do
+        get 'import'
+      end
+    end
   end
 
   root :to => "events#index"
