@@ -102,32 +102,31 @@ Work Area, Rambling
 ### Friend Following
 * Follow another Contributor from the same Hub.
 
-# Social Media Publication
+### Social Media Publication
 * Publish tweets / blog feeds / short messages in the 'from our members' sidebar for each Hub?
 
-# Views
-
-## Front Page
+### Front Page
 
 Displays upcoming events, most popular feed items, and any sticky feed items, profile pictures 
 of hub Contributors, with links to their contributions/profile.
 
-## Contributor Page
+### Contributor Page
 
 Displays basic user information and all public contributions to the hub.
 
 _Possible improvement: participation score -- how many of their suggested feeds have been adopted by the curator, how many of the articles on their feeds have been bubbled, how many of their events have been attended.  &c._
 
-## All Contributions Page
+### All Contributions Page
 
 Displays Hub feeds, and all public feeds associated with that hub.
 
-## Search Page
+### Search Page
 
 Search results across contributions.
 
 Displays contributor's photo, public feeds and events, and 
 
-## Template Management
+### Template Management
+
 * Customizable attributes for page templates: font, background color, etc.
 * Advanced template management for real money?
