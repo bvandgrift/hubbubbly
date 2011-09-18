@@ -1,0 +1,15 @@
+= semantic_form_for(@related_resource, :url =>(@related_resource.persisted? ? manage_related_resource_url(@related_resource) : manage_related_resources_url) ) do |f|
+  - if @related_resource.errors.any?
+    .error_explanation
+      %h2
+        = pluralize(@related_resource.errors.count, 'error')
+        prohibited this related_resource from being saved:
+
+      %ul
+      - @related_resource.errors.full_messages.each do |msg|
+        %li= msg
+
+  .fields
+    = f.inputs :name, :url
+  .actions
+    = f.submit

@@ -1,0 +1,2 @@
+class SourceController < ApplicationController
+end

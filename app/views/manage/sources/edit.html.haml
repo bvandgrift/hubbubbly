@@ -1,0 +1,6 @@
+%h1= "Editing '#{@source.title}'"
+
+= render 'form'
+
+= link_to 'Show', manage_source_path(@source)
+= link_to 'Back', manage_sources_path

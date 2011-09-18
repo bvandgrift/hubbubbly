@@ -1,0 +1,15 @@
+= semantic_form_for(@source, :url =>(@source.persisted? ? manage_source_url(@source) : manage_sources_url) ) do |f|
+  - if @source.errors.any?
+    .error_explanation
+      %h2
+        = pluralize(@source.errors.count, 'error')
+        prohibited this source from being saved:
+
+      %ul
+      - @source.errors.full_messages.each do |msg|
+        %li= msg
+
+  .fields
+    = f.inputs :title, :url, :feed_url
+  .actions
+    = f.submit

@@ -1,0 +1,7 @@
+%tr
+  %td= link_to related_resource.name, related_resource.url
+  %td
+    %ul
+      %li= link_to 'Show', manage_related_resource_path(related_resource)
+      %li= link_to 'Edit', edit_manage_related_resource_path(related_resource)
+      %li= link_to 'Delete', manage_related_resource_path(related_resource), confirm: 'Are you sure?', method: :delete

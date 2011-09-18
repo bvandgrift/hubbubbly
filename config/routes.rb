@@ -2,7 +2,9 @@ Hubbubbly::Application.routes.draw do
 
   devise_for :users
 
+  resources :clippings, :only => [:show, :index]
   resources :events, :only => [:show,:index]
+  resources :related_resources, :only => [:show, :index]
 
   namespace :manage do
     resources :calendars do
@@ -10,9 +12,16 @@ Hubbubbly::Application.routes.draw do
         get 'import'
       end
     end
+    resources :related_resources
+    resources :sources do
+      member do
+        get 'import'
+      end
+    end
+    resources :events, :only => [:new, :create, :update, :destroy]
   end
 
-  root :to => "events#index"
+  root :to => "front#index"
 
 
   # The priority is based upon order of creation:

@@ -1,0 +1,6 @@
+
+%h1= link_to "Resource: #{@related_resource.name}", @related_resource.url
+
+= link_to 'Import', import_manage_related_resource_path(@related_resource)
+= link_to 'Edit', edit_manage_related_resource_path(@related_resource)
+= link_to 'Back', manage_related_resources_path

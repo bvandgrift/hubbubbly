@@ -1,0 +1,10 @@
+%h1 Related Resources
+
+%table{:width => '100%'}
+  %tr
+    %td Name and Link
+    %td Actions
+
+    = render @related_resources
+
+= link_to "New Resource", new_manage_related_resource_path

@@ -1,0 +1,20 @@
+%h1 Listing sources
+
+%table
+  %tr
+    %td name
+    %td url
+    %td actions
+
+  - @sources.each do |source| 
+    %tr
+      %td= source.title
+      %td= source.feed_url
+      %td 
+        = link_to 'Show', manage_source_path(source)
+        = link_to 'Edit', edit_manage_source_path(source)
+        = link_to 'Destroy', manage_source_path(source), confirm: 'Are you sure?', method: :delete
+
+%br
+
+= link_to 'New Source', new_manage_source_path

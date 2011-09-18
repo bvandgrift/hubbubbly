@@ -1,0 +1,9 @@
+
+%h1= @source.title
+
+%ul.clippings
+
+
+= link_to 'Import', import_manage_source_path(@source)
+= link_to 'Edit', edit_manage_source_path(@source)
+= link_to 'Back', manage_sources_path
