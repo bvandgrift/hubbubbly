@@ -31,10 +31,6 @@ group :test, :development, :cucumber do
   gem 'guard', '~> 0.5', :require => nil
   gem 'guard-bundler', '~> 0.1.3', :require => nil
   gem 'guard-rspec', '~> 0.4', :require => nil
-  if RUBY_PLATFORM.downcase.include?("darwin")
-    gem 'growl'
-    gem 'rb-fsevent'
-  end
   gem 'capybara'
   gem 'faker'
   gem 'database_cleaner', '0.5.2'
