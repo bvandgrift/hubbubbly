@@ -14,6 +14,11 @@ gem 'ri_cal', '0.8.7'
 gem 'inherited_resources', '1.3.0'
 gem 'icalendar', '1.1.5'
 gem 'formtastic'
+gem 'heroku'
+
+group :production
+  gem 'activerecord-postgresql-adapter'
+end
 
 group :development do
   gem 'capistrano', '2.5.19'
