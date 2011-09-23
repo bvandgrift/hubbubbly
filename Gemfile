@@ -16,7 +16,7 @@ gem 'icalendar', '1.1.5'
 gem 'formtastic'
 gem 'heroku'
 
-group :production
+group :production do
   gem 'activerecord-postgresql-adapter'
 end
 
