@@ -17,7 +17,7 @@ gem 'formtastic'
 gem 'heroku'
 
 group :production do
-  gem 'activerecord-postgresql-adapter'
+  gem 'pg'
 end
 
 group :development do
