@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20110918211251) do
     t.string   "feed_url",                                         :null => false
     t.string   "etag"
     t.datetime "last_modified"
-    t.datetime "last_checked",  :default => '2011-09-18 21:22:36'
+    t.datetime "last_checked",  :default => '2011-09-23 21:34:48'
     t.datetime "created_at"
     t.datetime "updated_at"
   end

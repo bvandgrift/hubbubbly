@@ -15,6 +15,7 @@ gem 'inherited_resources', '1.3.0'
 gem 'icalendar', '1.1.5'
 gem 'formtastic'
 gem 'heroku'
+gem 'uglifier'
 
 group :production do
   gem 'pg'
