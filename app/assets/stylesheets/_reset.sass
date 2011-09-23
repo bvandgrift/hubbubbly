@@ -124,3 +124,15 @@
 //     body.unregistered
 //       +reset-display(".unregistered-only")
 
+
+=reset-display($selector: "", !important: false)
+  #{append-selector(elements-of-type("inline"), $selector)}
+    @if !important
+      display: inline !important
+    @else
+      display: inline
+  #{append-selector(elements-of-type("block"), $selector)}
+    @if !important
+      display: block !important
+    @else
+      display: block
