@@ -4,7 +4,7 @@ class Calendar < ActiveRecord::Base
   validates :name, :presence => true
   validates  :url, :presence => true
 
-  has_many :events
+  has_many :events, :dependent => :destroy
   
   def import
     updated = created = 0

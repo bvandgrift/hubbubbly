@@ -1,5 +1,5 @@
 class Source < ActiveRecord::Base
-  has_many :clippings
+  has_many :clippings, :dependent => :destroy
 
   def import
     updated = created = 0

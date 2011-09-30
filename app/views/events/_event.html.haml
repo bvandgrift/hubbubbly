@@ -1,6 +1,6 @@
 %li.event
   .title
-    = link_to event.label, event_url(event)
+    = link_to event.label, event.url
   .date
     = event.at.strftime("%B %d, %l:%M %P")
   .location
