@@ -1,0 +1,11 @@
+%li.event
+  .title
+    = link_to event.label, event_url(event)
+  .date
+    = event.at.strftime("%B %d, %l:%M %P")
+  .location
+    = event.location
+  .description
+    = event.description 
+  .links
+    = link_to "more &raquo;".html_safe, url_for(event)

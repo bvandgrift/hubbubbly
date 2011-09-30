@@ -9,3 +9,5 @@ Gemfile.lock
 config/database.yml
 **~
 coverage/
+#*
+.#*

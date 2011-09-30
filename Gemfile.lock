@@ -94,7 +94,6 @@ GEM
     highline (1.6.2)
     hike (1.2.1)
     i18n (0.6.0)
-    icalendar (1.1.5)
     inherited_resources (1.3.0)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
@@ -154,7 +153,7 @@ GEM
     responders (0.6.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    ri_cal (0.8.7)
+    ri_cal (0.8.8)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -217,7 +216,6 @@ DEPENDENCIES
   guard-rspec (~> 0.4)
   haml
   heroku
-  icalendar (= 1.1.5)
   inherited_resources (= 1.3.0)
   loofah
   loofah-activerecord
@@ -225,7 +223,7 @@ DEPENDENCIES
   pg
   rails (= 3.1.0)
   rails-footnotes (>= 3.7.5.rc4)
-  ri_cal (= 0.8.7)
+  ri_cal (= 0.8.8)
   rspec-rails (~> 2.6)
   sass
   simplecov (~> 0.4)

@@ -1,4 +1,4 @@
 .featured
-  = render @events.shift
+  = render 'featured_event', :event => @events.shift 
 .upcoming
   = render @events

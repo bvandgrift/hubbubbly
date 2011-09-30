@@ -7,23 +7,26 @@ class Calendar < ActiveRecord::Base
   has_many :events
   
   def import
-    calendar_file = open(url)
-    calendars = Icalendar.parse(calendar_file)
     updated = created = 0
-    calendars.each do |calendar|
+    cal_string = open(url).read
+
+    open(url) do |f|
       
-      logger.info "importing: #{calendar.properties['x-wr_caldesc']}"
-      calendar.events.map(&:properties).each do |prop|
-        event = extract_event_properties(prop)
-        existing_event = events.find_by_uid(prop['uid'])
-        if existing_event
-          existing_event.update_attributes(event)
-          updated += 1
-        else
-          events.create(event)
-          created += 1
+      calendars = RiCal.parse(f)
+      calendars.each do |cal|
+    
+        cal.events.each do |event|
+          pending_event = extract_event_properties_rical(event)
+          existing_event = events.find_by_uid(pending_event['uid'])
+          if existing_event
+            existing_event.update_attributes(pending_event)
+            updated += 1
+          else
+            events.create(pending_event)
+            created += 1
+          end
         end
-      end 
+      end
     end
     logger.info "import result: created #{created} events, updated #{updated} events."
   end
@@ -42,5 +45,21 @@ private
       :summary => props['summary']
     }
   end    
+
+  def extract_event_properties_rical(event)
+    {
+      :label => event.summary,
+      :at => event.dtstart,
+      :until => event.dtend,
+      :description => event.description,
+      :location => event.location,
+      :last_modified => event.last_modified,
+      :url => event.url.to_s,
+      :uid => event.uid,
+      :summary => event.summary
+    }
+  end    
+
+
 
 end
