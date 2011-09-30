@@ -23,6 +23,7 @@ end
 
 group :development do
   gem 'capistrano', '2.5.19'
+  gem 'rails-footnotes', '>= 3.7.5.rc4'
 end
 
 group :test, :development, :cucumber do
