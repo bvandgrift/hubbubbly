@@ -6,7 +6,8 @@ private
 
   def require_admin
     unless current_user && current_user.admin?
-      redirect_to root_url
+      # TODO: raise exception?
+      head :status => 404
     end
   end
 

@@ -44,5 +44,8 @@ module Hubbubbly
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :twitter, "consumer_key", "consumer_secret" 
+    end
   end
 end

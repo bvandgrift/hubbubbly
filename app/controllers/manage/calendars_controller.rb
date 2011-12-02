@@ -3,7 +3,7 @@ module Manage
 
     before_filter :authenticate_user!, :require_admin
     defaults :route_prefix => 'manage'
-
+ 
     def import
       @calendar = Calendar.find(params[:id])
       @calendar.import

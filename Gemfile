@@ -23,6 +23,8 @@ gem 'inherited_resources', '1.3.0'
 gem 'formtastic'
 gem 'heroku'
 gem 'uglifier'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :production do
   gem 'pg'

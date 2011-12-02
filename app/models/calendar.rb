@@ -17,7 +17,7 @@ class Calendar < ActiveRecord::Base
     
         cal.events.each do |event|
           pending_event = extract_event_properties_rical(event)
-          existing_event = events.find_by_uid(pending_event['uid'])
+          existing_event = events.find_by_uid(pending_event[:uid])
           if existing_event
             existing_event.update_attributes(pending_event)
             updated += 1

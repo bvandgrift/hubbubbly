@@ -5,4 +5,8 @@ FactoryGirl.define do
     password_confirmation  "password"
     # after_build { |user| user.confirm! }
   end
+
+  factory :admin, :parent => :user do
+    admin "true"
+  end
 end
