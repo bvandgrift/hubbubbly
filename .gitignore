@@ -7,6 +7,7 @@ tmp/**/*
 vendor/bundler_gems/**
 Gemfile.lock
 config/database.yml
+config/omniauth.yml
 **~
 coverage/
 #*
