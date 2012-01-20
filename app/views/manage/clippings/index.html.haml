@@ -1,0 +1,20 @@
+%h1 Listing clippings
+
+%table
+  %tr
+    %td name
+    %td url
+    %td actions
+
+  - @clippings.each do |clipping| 
+    %tr
+      %td= clipping.title
+      %td= clipping.url
+      %td 
+        = link_to 'Show', manage_clipping_path(clipping)
+        = link_to 'Edit', edit_manage_clipping_path(clipping)
+        = link_to 'Destroy', manage_clipping_path(clipping), confirm: 'Are you sure?', method: :delete
+
+%br
+
+= link_to 'New Calendar', new_manage_clipping_path

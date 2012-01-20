@@ -1,0 +1,15 @@
+= semantic_form_for(@calendar, :url =>(@calendar.persisted? ? manage_calendar_url(@calendar) : manage_calendars_url) ) do |f|
+  - if @calendar.errors.any?
+    .error_explanation
+      %h2
+        = pluralize(@calendar.errors.count, 'error')
+        prohibited this calendar from being saved:
+
+      %ul
+      - @calendar.errors.full_messages.each do |msg|
+        %li= msg
+
+  .fields
+    = f.inputs :name, :url
+  .actions
+    = f.submit

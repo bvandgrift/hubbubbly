@@ -1,0 +1,9 @@
+
+%h1= @calendar.name
+
+%ul.events
+
+
+= link_to 'Import', import_manage_calendar_path(@calendar)
+= link_to 'Edit', edit_manage_calendar_path(@calendar)
+= link_to 'Back', manage_calendars_path

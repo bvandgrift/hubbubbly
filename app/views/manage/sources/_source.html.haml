@@ -1,0 +1,7 @@
+%tr
+  %td= source.title
+  %td= source.feed_url
+  %td 
+    = link_to 'Show', manage_source_path(source)
+    = link_to 'Edit', edit_manage_source_path(source)
+    = link_to 'Destroy', manage_source_path(source), confirm: 'Are you sure?', method: :delete

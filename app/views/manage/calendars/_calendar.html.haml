@@ -1,0 +1,7 @@
+%tr
+  %td= calendar.name
+  %td= calendar.url
+  %td 
+    = link_to 'Show', manage_calendar_path(calendar)
+    = link_to 'Edit', edit_manage_calendar_path(calendar)
+    = link_to 'Destroy', manage_calendar_path(calendar), confirm: 'Are you sure?', method: :delete
