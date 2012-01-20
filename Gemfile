@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'haml'
+gem 'rake', '0.9.2.2'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -11,7 +12,6 @@ end
 
 gem 'jquery-rails'
 
-gem 'devise'
 gem 'mysql2'
 #gem 'paperclip'
 #gem 'aws-s3'
@@ -23,8 +23,11 @@ gem 'inherited_resources', '1.3.0'
 gem 'formtastic'
 gem 'heroku'
 gem 'uglifier'
-gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'omniauth-identity'
 
 group :production do
   gem 'pg'
