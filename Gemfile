@@ -30,11 +30,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth-identity'
 
 group :production do
-  gem 'pg'
 end
 
 group :development do
-  gem 'capistrano', '2.5.19'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano_colors'
   gem 'rails-footnotes', '>= 3.7.5.rc4'
 end
 
