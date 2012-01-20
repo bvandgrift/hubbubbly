@@ -1,0 +1,28 @@
+development:
+  twitter:
+    key: 'key'
+    secret: 'secret'
+  facebook:
+    key: 'key'
+    secret: 'secret'
+test:
+  twitter:
+    key: 'key'
+    secret: 'secret'
+  facebook:
+    key: 'key'
+    secret: 'secret'
+staging:
+  twitter:
+    key: 'key'
+    secret: 'secret'
+  facebook:
+    key: 'key'
+    secret: 'secret'
+production:
+  twitter:
+    key: 'key'
+    secret: 'secret'
+  facebook:
+    key: 'key'
+    secret: 'secret'
