@@ -8,6 +8,10 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
+
+  # js runtime
+  gem 'execjs'
+  gem 'therubyracer'
 end
 
 gem 'jquery-rails'
@@ -23,9 +27,11 @@ gem 'inherited_resources', '1.3.0'
 gem 'formtastic'
 gem 'heroku'
 gem 'uglifier'
+ #em 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem "omniauth-meetup", "~> 0.0.2"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth-identity'
 

@@ -21,9 +21,12 @@
     %a.auth_provider{:href => "/auth/facebook"}
       = image_tag "facebook_64.png", size: "64x64", alt: "Facebook"
       Facebook
-    %a.auth_provider{:href => "/auth/google_apps"}
-      = image_tag "google_apps_64.png", size: "64x64", alt: "Google"
+    %a.auth_provider{:href => "/auth/google_oauth2"}
+      = image_tag "google_64.png", size: "64x64", alt: "Google"
       Google
+    %a.auth_provider{:href => "/auth/meetup"}
+      = image_tag "meetup_64.png", size: "64x64", alt: "Meetup"
+      Meetup
   %p
     %strong Don't use these services?
     = link_to "Create an account", new_identity_path

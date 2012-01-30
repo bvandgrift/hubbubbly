@@ -1,7 +1,7 @@
 module Manage
   class CalendarsController < InheritedResources::Base
 
-    before_filter :authenticate_user!, :require_admin
+    #before_filter :authenticate_user!, :require_admin
     defaults :route_prefix => 'manage'
  
     def import
