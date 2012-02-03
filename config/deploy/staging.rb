@@ -2,5 +2,6 @@ role :web, "staging.hubbubbly.com"                          # Your HTTP server, 
 role :app, "staging.hubbubbly.com"                          # This may be the same as your `Web` server
 role :db,  "staging.hubbubbly.com", :primary => true 
 
-#set :user, 'hubbubbly'
-set :deploy_to, 'staging/hubbubbly'
+set :user, 'hubbubbly'
+set :deploy_to, '~/staging'
+set :rails_env, "staging"
