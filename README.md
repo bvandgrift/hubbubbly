@@ -14,3 +14,5 @@ Start their rails app `rails s`, and visit
 In order to include hub features into an existing site, a potential user
 should add the 'hubbubbly' gem to their Gemfile, and begin using the
 helper partials to populate areas of their existing site. 
+
+Theoretically.
