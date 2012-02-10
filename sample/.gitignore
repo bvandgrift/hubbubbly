@@ -23,3 +23,6 @@ db/*.sqlite3
 #*
 .#*
 *.swp
+
+/db/migrate/*.hubbubbly.rb
+/db/schema.rb

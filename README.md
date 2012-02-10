@@ -16,3 +16,9 @@ should add the 'hubbubbly' gem to their Gemfile, and begin using the
 helper partials to populate areas of their existing site. 
 
 Theoretically.
+
+To import migrations from the engine:
+
+    rake hubbubbly:install:migrations
+
+Then, you can run `rake db:migrate` to migrate.
