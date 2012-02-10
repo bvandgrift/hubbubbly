@@ -3,14 +3,11 @@
 
 #require File.expand_path('../config/application', __FILE__)
 
-#begin
-#  require 'rspec/core/rake_task'
-#  RSpec::Core::RakeTask.new(:spec)
-#  task :default => :spec
-#rescue LoadError => ls
-#end
-
-#require 'resque/tasks'
-#Dir['lib/**/*.rake'].each { |f| load File.expand_path(f) }
-
-#Hubbubbly::Application.load_tasks
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+  task :default => :spec
+rescue LoadError => ls
+  puts "rspec failing to load."
+  exit(1)
+end
