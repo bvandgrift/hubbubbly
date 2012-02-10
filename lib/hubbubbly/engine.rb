@@ -1,3 +1,6 @@
+require 'inherited_resources'
+require 'haml'
+
 module Hubbubbly
   class Engine < Rails::Engine
     isolate_namespace Hubbubbly
@@ -23,6 +26,5 @@ module Hubbubbly
     initializer "static assets" do |app|
       app.middleware.use ::ActionDispatch::Static, "#{root}/public"
     end
-    
   end
 end
