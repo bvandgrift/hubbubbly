@@ -2,8 +2,12 @@ source 'http://rubygems.org'
 
 gemspec
 
-# We'd like to test some stuff, you know, cuz.
+# Sure would be nice to be able to run our sample app.
+group :development do
+  gem "jquery-rails"
+end
 
+# We'd like to test some stuff, you know, cuz.
 group :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.6'
