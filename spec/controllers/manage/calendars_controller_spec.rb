@@ -2,102 +2,73 @@ require 'spec_helper'
 
 describe Manage::CalendarsController do
 
-  context "when a user is not logged in" do
-    it "should be redirected to the signin page" do
+  let(:valid_attributes) {{:name => "Test Calendar", :url => "http://test-host.test"}}
+
+  describe "GET index" do
+    it "assigns all calendars as @calendars" do
+      calendar = Calendar.create! valid_attributes
       get :index
 
-      response.should redirect_to(new_user_session_path) 
-    end
-  end
-  
-  context "when a user is logged in but is not an admin" do
-    before do
-      sign_in Factory.create(:user)
-    end
-
-    it "should respond with a 404" do
-      get :index
-
-      response.should_not be_success
-      response.code.should == "404"
+      assigns(:calendars).should eq([calendar])
     end
   end
 
-  context "when logged in as an admin" do
-
-    let(:valid_attributes) {{:name => "Test Calendar", :url => "http://test-host.test"}}
-
-    before(:each) do
-      @user = Factory.create(:admin)  #:user from factory girl with admin privilages
-      sign_in @user
+  describe "GET show" do
+    it "assigns the requested calendar as @calendar" do
+      calendar = Calendar.create! valid_attributes
+      get :show, :id => calendar.id.to_s
+      assigns(:calendar).should eq(calendar)
     end
+  end
 
-    describe "GET index" do
-      it "assigns all calendars as @calendars" do
-        calendar = Calendar.create! valid_attributes
-        get :index
-       
-        assigns(:calendars).should eq([calendar])
+  describe "GET new" do
+    it "assigns a new calendar as @calendar" do
+      get :new
+      assigns(:calendar).should be_a_new(Calendar)
+    end
+  end
+
+  describe "GET edit" do
+    it "assigns the requested calendar as @calendar" do
+      calendar = Calendar.create! valid_attributes
+      get :edit, :id => calendar.id.to_s
+      assigns(:calendar).should eq(calendar)
+    end
+  end
+
+  describe "POST create" do
+    describe "with valid params" do
+      it "creates a new Calendar" do
+        expect {
+          post :create, :calendar => valid_attributes
+        }.to change(Calendar, :count).by(1)
+      end
+
+      it "assigns a newly created calendar as @calendar" do
+        post :create, :calendar => valid_attributes
+        assigns(:calendar).should be_a(Calendar)
+        assigns(:calendar).should be_persisted
+      end
+
+      it "redirects to the created calendar" do
+        post :create, :calendar => valid_attributes
+        response.should redirect_to(manage_calendar_url(Calendar.last))
       end
     end
 
-    describe "GET show" do
-      it "assigns the requested calendar as @calendar" do
-        calendar = Calendar.create! valid_attributes
-        get :show, :id => calendar.id.to_s
-        assigns(:calendar).should eq(calendar)
-      end
-    end
-
-    describe "GET new" do
-      it "assigns a new calendar as @calendar" do
-        get :new
+    describe "with invalid params" do
+      it "assigns a newly created but unsaved calendar as @calendar" do
+        # Trigger the behavior that occurs when invalid params are submitted
+        Calendar.any_instance.stub(:save).and_return(false)
+        post :create, :calendar => {}
         assigns(:calendar).should be_a_new(Calendar)
       end
-    end
 
-    describe "GET edit" do
-      it "assigns the requested calendar as @calendar" do
-        calendar = Calendar.create! valid_attributes
-        get :edit, :id => calendar.id.to_s
-        assigns(:calendar).should eq(calendar)
-      end
-    end
-
-    describe "POST create" do
-      describe "with valid params" do
-        it "creates a new Calendar" do
-          expect {
-            post :create, :calendar => valid_attributes
-          }.to change(Calendar, :count).by(1)
-        end
-
-        it "assigns a newly created calendar as @calendar" do
-          post :create, :calendar => valid_attributes
-          assigns(:calendar).should be_a(Calendar)
-          assigns(:calendar).should be_persisted
-        end
-
-        it "redirects to the created calendar" do
-          post :create, :calendar => valid_attributes
-          response.should redirect_to(manage_calendar_url(Calendar.last))
-        end
-      end
-
-      describe "with invalid params" do
-        it "assigns a newly created but unsaved calendar as @calendar" do
-          # Trigger the behavior that occurs when invalid params are submitted
-          Calendar.any_instance.stub(:save).and_return(false)
-          post :create, :calendar => {}
-          assigns(:calendar).should be_a_new(Calendar)
-        end
-
-        it "re-renders the 'new' template" do
-          # Trigger the behavior that occurs when invalid params are submitted
-          Calendar.any_instance.stub(:save).and_return(false)
-          post :create, :calendar => {}
-          response.should redirect_to(manage_calendars_url)
-        end
+      it "re-renders the 'new' template" do
+        # Trigger the behavior that occurs when invalid params are submitted
+        Calendar.any_instance.stub(:save).and_return(false)
+        post :create, :calendar => {}
+        response.should redirect_to(manage_calendars_url)
       end
     end
 

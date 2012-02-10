@@ -1,5 +1,6 @@
 require 'inherited_resources'
 require 'haml'
+require 'ri_cal'
 
 module Hubbubbly
   class Engine < Rails::Engine
