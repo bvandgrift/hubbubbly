@@ -1,39 +1,33 @@
-Hubbubbly::Application.routes.draw do
+#Hubbubbly::Application.routes.draw do
+Rails.application.routes.draw do
 
-  # omniauth homina homina
-  match "/auth/:provider/callback", to: "sessions#create"
-  match "/auth/failure", to: "sessions#failure"
-  match "/signout", to: "sessions#destroy", :as => "signout"
-  match "/signin", to: "sessions#new", :as => "signin"
+  mount_point = Hubbubbly::Engine.config.mount_at
+  puts "FUCKING MOUNT POINT: #{mount_point.inspect}"
+#  mount Hubbubbly::Engine => "/hub"
 
-  resources :identities
+  scope(:path => mount_point) do
+    resources :clippings, :only => [:show, :index], :path_prefix => mount_point
+    resources :events, :only => [:show,:index], :path_prefix => mount_point
+    resources :related_resources, :only => [:show, :index], :path_prefix => mount_point
 
-  resources :clippings, :only => [:show, :index]
-  resources :events, :only => [:show,:index]
-  resources :related_resources, :only => [:show, :index]
-
-  namespace :manage do
-    resources :clippings do
-      member do
-        get 'import'
+    namespace :manage, :path_prefix => mount_point do
+      resources :clippings do
+        member do
+          get 'import'
+        end
       end
-    end
-    resources :calendars do
-      member do
-        get 'import'
+      resources :calendars do
+        member do
+          get 'import'
+        end
       end
-    end
-    resources :related_resources
-    resources :sources do
-      member do
-        get 'import'
+      resources :related_resources
+      resources :sources do
+        member do
+          get 'import'
+        end
       end
+      resources :events, :only => [:new, :create, :update, :destroy]
     end
-    resources :events, :only => [:new, :create, :update, :destroy]
   end
-
-  root :to => "front#index"
-
-
-  # match ':controller(/:action(/:id(.:format)))'
 end

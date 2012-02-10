@@ -1,0 +1,13 @@
+development:
+  adapter: mysql2
+  database: hubbubbly_sample_development
+  username: root
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: mysql2
+  database: hubbubbly_sample_test
+  username: root
+  pool: 5
+  timeout: 5000
